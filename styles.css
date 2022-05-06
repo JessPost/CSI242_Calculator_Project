@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 90vh;
+    margin-top: 35px;
+    background: linear-gradient(to right, #032a9f, #46d1fb, #7d039f);
+}
+
+.calculator-container {
+    background: black;
+    border-radius: 50px;
+    color: rgba(233, 230, 230, 0.9);
+    min-height: 80vh;
+    padding: 20px;
+    width: 525px;
+}
+
+.display-history {
+    color: rgba(201, 184, 184, 0.5);
+    font-size: 1.8rem;
+    margin-top: 25px;
+    padding-right: 15px;
+    overflow: hidden;
+    padding-right: 3px;
+}
+
+.display-current {
+    color: rgba(233, 230, 230, 0.9);
+    font-size: 6rem;
+    padding-top: 25px;
+    overflow: hidden;
+    padding-right: 2.5px;
+    padding-left: 2.5px;
+}
+
+.display-container {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0px;
+    height: 200px;
+}
+
+.button-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.button,
+.decimal {
+    align-items: center;
+    background: rgb(78, 77, 77);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    font-size: 50px;
+    height: 110px;
+    justify-content: center;
+    transition: .3 ease-in;
+    width: 110px;
+}
+
+.function {
+    color: black;
+    background: #d4cfcf;
+}
+
+.number,
+.decimal {
+    color: white;
+}
+
+.operator {
+    color: white;
+    background: #e68b13;
+    font-size: 60px;
+}
+
+.equal {
+    color: white;
+    background: #e68b13;
+    font-size: 60px;
+    border: none;
+    border-radius: 50%;
+}
+
+.zero {
+    border-radius: 60px;
+    grid-column: 1 / span 2;
+    justify-content: left;
+    padding-left: 43px;
+    width: 235px;
+    color: white;
+}
+
+.button:hover,
+.decimal:hover,
+.equal:hover {
+    filter: brightness(140%);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 400px) {
+    .calculator-container {
+        min-height: 100px;
+        width: 360px;
+    }
+
+    .display-history {
+        font-size: 30px;
+    }
+
+    .display-current {
+        font-size: 60px;
+    }
+
+    .display-container {
+        height: 165px;
+    }
+
+    .button,
+    .decimal {
+        font-size: 30px;
+        height: 70px;
+        width: 70px;
+    }
+
+    .equal {
+        font-size: 30px;
+    }
+
+    .zero {
+        width: 150px;
+    }
+}
