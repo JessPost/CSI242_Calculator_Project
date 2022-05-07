@@ -148,7 +148,12 @@ window.onload = function () {
     numberButton.forEach(function (buttonInput) {
         buttonInput.addEventListener('click', function () {
             //display number of button pressed
-            if (historyValue === '') {
+            if (equationTotal !== '') {
+                clearDisplay();
+                currentValue = buttonInput.innerText;
+                displayCurrentValue.append(currentValue);
+            }
+            else if (historyValue === '') {
                 historyValue = buttonInput.innerText;
                 displayCurrentValue.append(historyValue);
             }
@@ -244,8 +249,15 @@ window.onload = function () {
         }
         //numbers
         if (event.key >= 0 || event.key >= 9) {
-            displayCurrentValue.append(event.key);
-            currentValue = displayCurrentValue.innerText;
+            if (equationTotal === '') {
+                displayCurrentValue.append(event.key);
+                currentValue = displayCurrentValue.innerText;
+            }
+            else {
+                clearDisplay();
+                displayCurrentValue.append(event.key);
+                currentValue = displayCurrentValue.innerText;
+            }
         }
         //decimal
         if (event.keyCode === 190 || event.key === ".") {
