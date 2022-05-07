@@ -142,6 +142,7 @@ window.onload = function () {
         computeValue();
         //display equationTotal value
         displayCurrentValue.innerText = equationTotal;
+        //historyValue = equationTotal;
     }
 
     //going through the array of number buttons and listening for them to be clicked and displaying
@@ -253,6 +254,11 @@ window.onload = function () {
                 displayCurrentValue.append(event.key);
                 currentValue = displayCurrentValue.innerText;
             }
+            else if (historyValue === '') {
+                historyValue = displayCurrentValue.innerText;
+                displayCurrentValue.append(historyValue);
+            }
+
             else {
                 clearDisplay();
                 displayCurrentValue.append(event.key);
